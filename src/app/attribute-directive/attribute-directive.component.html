@@ -1,0 +1,25 @@
+<h1 style="color:red">Attribute Directive</h1>
+<app-ngclass ></app-ngclass>
+<app-ngstyle></app-ngstyle>
+
+<!-- Attribute tự định nghĩa -->
+<div appHighLight>
+    Hello Word
+</div>
+
+<!-- ko thể ngIf ngFor.. trong cùng 1 dòng -->
+<!-- <div *ngIf="mang !== null" *ngFor="let item of mang">{{ item }}</div> -->
+<!-- ng-container: ko dư thẻ div bao bên ngoài dữ liệu -->
+<ng-container *ngIf="mang !== null">
+    <div *ngFor="let item of mang">{{ item }}</div>
+</ng-container>
+
+<ng-container *ngTemplateOutlet="templateName">
+    
+</ng-container>
+
+<!-- ng-template dành cho private, chỉ dành cho đúng trang nào có nó -->
+<ng-template #templateName>
+    <div>Nội dung template</div>
+</ng-template>
+

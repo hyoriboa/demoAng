@@ -1,0 +1,14 @@
+<h1>Bai tap</h1>
+<div class="form-group">
+  <label for="email">Email:</label>
+  <input type="text" class="form-control"  [(ngModel)]="email">
+</div>
+<div class="form-group">
+  <label for="pwd">Fullname:</label>
+  <input type="text" class="form-control"   #thamso ">
+</div>
+<button class="btn btn-success" (click)="showName(thamso.value)">Submit</button>
+<div>
+    <label for="email">Email: {{ email }}</label><br>
+    <label for="pwd">Fullname: {{ fullName }}</label>
+</div>

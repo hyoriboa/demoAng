@@ -1,0 +1,70 @@
+<h1 style="color:red">Bài tập ng if</h1>
+
+
+<!-- Navbarlink -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Cyber</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" >Trang chủ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >Trang tin tức</a>
+      </li>
+      <li class="nav-item" data-toggle="modal" data-target="#myModal" >
+        <a class="nav-link" *ngIf="isLogin ; else nameTemplate">
+          Hello: {{ name }}</a>
+        <!-- <a class="nav-link" *ngIf="isLogin">Login</a> -->
+      </li> 
+    </ul>
+  </div> 
+</nav>
+
+
+<ng-template #nameTemplate>
+    <a class="nav-link" >Login</a>
+</ng-template>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Login</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" #userName>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" #pass>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="dangNhap(userName.value, pass.value)">
+          Login</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

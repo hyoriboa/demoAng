@@ -1,0 +1,28 @@
+<br>
+<br>
+<br>
+
+<div>
+    <p *ngIf="status">
+        {{name}}
+      </p>
+      <button class="btn btn-success" (click)="clickButton()">{{ status ? 'Hide text' : 'Show text'}}</button>
+      <!-- <button class="btn btn-primary" (click)="show()">Show</button>
+      <button class="btn btn-primary" (click)="hidden()">Hidden</button> -->
+</div>
+
+<br>
+<br>
+
+<div *ngIf="statusLogin; else NoiDungElse">
+  <button class="btn btn-success" (click)="dangXuat()">Dang xuat</button>
+  <p>Xin chao cau</p>
+</div>
+
+<ng-template #NoiDungElse>
+    <button class="btn btn-success" (click)="dangNhap()">Dang nhap</button>
+    <p>Vui long dang nhap</p>
+</ng-template>
+
+
+

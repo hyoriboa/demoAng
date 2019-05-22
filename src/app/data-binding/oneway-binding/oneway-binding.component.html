@@ -1,0 +1,18 @@
+<h1 style="color: red">Oneway Binding</h1>
+<p>
+  <!-- interpolation -->
+  {{ name }}
+</p>
+
+<!-- Property binding -->
+<input type="text" [value]=" name " #thamso>
+<!-- <input type="text" value="{{ name }}"> -->
+<br>
+<img [src]="imgString" alt="">
+
+<div>
+  <!-- Event Binding -->
+  <button (click)="eventBinding(thamso.value)">Even Binding</button>
+</div>
+
+

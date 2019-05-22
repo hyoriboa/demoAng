@@ -1,0 +1,21 @@
+<!--   //Input: chuyển data từ "cha sang con" thông qua thuộc tính Input của component đó  -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let item of danhSachPhim">
+      <!--Begin item -->
+      <!-- movieChuyenDi: truyền dữ liệu đi qua con item-phim.ts -->
+      <app-item-phim    [movieChuyenDi]="item"    (eventLike)="thich($event)"></app-item-phim>
+      <!-- eventLike: tên gửi đi  -->
+      <!-- $event: this.movieChuyenDi đc đẩy ra -->
+      <!-- End item -->
+    </div>
+    <button class="btn btn-success"   (click)="viewChildren()">ViewChildren</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p *ngFor="let item of danhSachLike">{{ item.tenPhim }} : {{ item.soLike }}</p>
+    </div>
+  </div>
+
+</div>

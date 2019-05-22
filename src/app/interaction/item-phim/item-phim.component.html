@@ -1,0 +1,10 @@
+<!--Begin item -->
+<div class="card">
+    <img class="card-img-top" [src]="movieChuyenDi.hinhAnh" alt="">
+    <div class="card-body">
+        <h4 class="card-title">{{ movieChuyenDi.tenPhim }}</h4>
+        <p class="card-text">{{ movieChuyenDi.gia}}</p>
+        <button class="btn btn-primary"     (click)="like()">Like</button>
+    </div>
+</div>
+<!-- End item -->

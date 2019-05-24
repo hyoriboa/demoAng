@@ -57,12 +57,19 @@ export class DanhSachGheBusComponent implements OnInit {
   datGhe(ghe){
     // console.log(ghe);
     // this.danhSachGheDaDat.push(ghe);
-    (ghe.trangThai) ? (this.danhSachGheDaDat.push(ghe.ghe)) : (this.danhSachGheDaDat.splice(this.danhSachGheDaDat.findIndex(item => item.SoGhe === ghe.ghe.SoGhe), 1));
+    (ghe.trangThai) ? (this.danhSachGheDaDat.push(ghe.ghe)) :
+     (this.danhSachGheDaDat.splice(this.danhSachGheDaDat.findIndex(item => item.SoGhe === ghe.ghe.SoGhe), 1));
+    //  console.log(this.danhSachGheDaDat);
+     
   }
 
   huyGhe(ghe){
     this.danhSachGheDaDat.splice(this.danhSachGheDaDat.findIndex(item => item.SoGhe === ghe.SoGhe), 1);
+    // console.log(this.danhSachGhe);
+    
     let gheHuy = this.danhSachGhe.find(item=>item.ghe.SoGhe === ghe.SoGhe);
+    // console.log(gheHuy);
+    
     gheHuy.trangThaiChon = false;
   }
 
